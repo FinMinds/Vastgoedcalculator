@@ -1,0 +1,77 @@
+{
+  "version": "v2026-01",
+  "effectiveFrom": "2026-01-01",
+  "effectiveTo": "2026-12-31",
+  "regions": [
+    {
+      "region": "Vlaanderen",
+      "registrationTax": {
+        "defaultRate": 0.12,
+        "reducedRate": {
+          "rate": 0.02,
+          "conditions": ["isPrimaryResidence = true"]
+        }
+      },
+      "abattement": {
+        "enabled": true,
+        "amount": 80000,
+        "conditions": ["isPrimaryResidence = true"]
+      },
+      "notaryHonorariumBrackets": [
+        { "upTo": 7500, "rate": 0.0456 },
+        { "upTo": 17500, "rate": 0.0285 },
+        { "upTo": 30000, "rate": 0.0228 },
+        { "upTo": 45495, "rate": 0.0171 },
+        { "upTo": 64095, "rate": 0.0114 },
+        { "upTo": 250095, "rate": 0.0057 },
+        { "upTo": 999999999, "rate": 0.00057 }
+      ],
+      "mortgageCostEstimate": { "base": 2800, "lowFactor": 0.9, "highFactor": 1.1 },
+      "adminCostsEstimate": { "base": 1500, "lowFactor": 0.8, "highFactor": 1.2 },
+      "eligibilityQuestions": ["Will this be your primary residence?", "Are you acquiring as an investment?"],
+      "requiredDisclaimers": ["Rates are informational only; verify with notary."]
+    },
+    {
+      "region": "Brussel",
+      "registrationTax": {
+        "defaultRate": 0.125,
+        "reducedRate": { "rate": 0.125, "conditions": [] }
+      },
+      "abattement": { "enabled": true, "amount": 200000, "conditions": ["isPrimaryResidence = true"] },
+      "notaryHonorariumBrackets": [
+        { "upTo": 7500, "rate": 0.0456 },
+        { "upTo": 17500, "rate": 0.0285 },
+        { "upTo": 30000, "rate": 0.0228 },
+        { "upTo": 45495, "rate": 0.0171 },
+        { "upTo": 64095, "rate": 0.0114 },
+        { "upTo": 250095, "rate": 0.0057 },
+        { "upTo": 999999999, "rate": 0.00057 }
+      ],
+      "mortgageCostEstimate": { "base": 3200, "lowFactor": 0.9, "highFactor": 1.1 },
+      "adminCostsEstimate": { "base": 1700, "lowFactor": 0.8, "highFactor": 1.2 },
+      "eligibilityQuestions": ["Will this be your primary residence?"],
+      "requiredDisclaimers": ["Abattement thresholds subject to legal changes."]
+    },
+    {
+      "region": "Wallonie",
+      "registrationTax": {
+        "defaultRate": 0.125,
+        "reducedRate": { "rate": 0.06, "conditions": ["isPrimaryResidence = true"] }
+      },
+      "abattement": { "enabled": false, "amount": 0, "conditions": [] },
+      "notaryHonorariumBrackets": [
+        { "upTo": 7500, "rate": 0.0456 },
+        { "upTo": 17500, "rate": 0.0285 },
+        { "upTo": 30000, "rate": 0.0228 },
+        { "upTo": 45495, "rate": 0.0171 },
+        { "upTo": 64095, "rate": 0.0114 },
+        { "upTo": 250095, "rate": 0.0057 },
+        { "upTo": 999999999, "rate": 0.00057 }
+      ],
+      "mortgageCostEstimate": { "base": 3000, "lowFactor": 0.9, "highFactor": 1.1 },
+      "adminCostsEstimate": { "base": 1600, "lowFactor": 0.8, "highFactor": 1.2 },
+      "eligibilityQuestions": ["Will this be your primary residence?"],
+      "requiredDisclaimers": ["Reduced rates can require long-term occupancy commitments."]
+    }
+  ]
+}

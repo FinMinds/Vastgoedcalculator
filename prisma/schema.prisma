@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id                 String   @id @default(cuid())
+  region             String
+  purchasePrice      Float
+  estimatedValue     Float?
+  rentMonthly        Float
+  loanAmount         Float
+  loanYears          Int
+  interestRate       Float
+  isPrimaryResidence Boolean
+  isInvestment       Boolean
+  isNewBuild         Boolean
+  createdAt          DateTime @default(now())
+  assumptions        Assumptions?
+  snapshots          ReportSnapshot[]
+}
+
+model Assumptions {
+  id                String  @id @default(cuid())
+  projectId         String  @unique
+  project           Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  vacancyRate       Float
+  maintenanceRate   Float
+  insuranceMonthly  Float
+  managementMonthly Float
+  taxModel          String
+  indexationRate    Float
+}
+
+model Ruleset {
+  id            String   @id @default(cuid())
+  version       String   @unique
+  effectiveFrom DateTime
+  effectiveTo   DateTime
+  jsonConfig    String
+  isActive      Boolean  @default(false)
+}
+
+model ReportSnapshot {
+  id              String   @id @default(cuid())
+  projectId       String
+  project         Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  computedJson    String
+  calculationHash String
+  narrative       String
+  createdAt       DateTime @default(now())
+}

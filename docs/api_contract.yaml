@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+  title: Vastgoed Investeringsengine API
+  version: 0.1.0
+paths:
+  /v1/scenarios/compute:
+    post:
+      summary: Compute volledige investeringsanalyse
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: ComputationResult
+          content:
+            application/json:
+              schema:
+                type: object

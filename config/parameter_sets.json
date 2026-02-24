@@ -1,0 +1,46 @@
+{
+  "parameter_sets": [
+    {
+      "name": "2026.1",
+      "region": "VL",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-12-31",
+      "params": {
+        "registration_duty_rates": {"DEFAULT": 0.12, "VL_OWNER": 0.02, "VL_INVEST": 0.12},
+        "vat_rates": {"STANDARD": 0.21, "REDUCED": 0.06},
+        "abatement_rules": {"BRU": {"max_basis": 200000}},
+        "notary_fee_schedule": [{"upto": 7500, "rate": 0.045}, {"upto": 17500, "rate": 0.0285}, {"upto": 30000, "rate": 0.0228}, {"upto": 45495, "rate": 0.0171}, {"upto": 64095, "rate": 0.0114}, {"upto": 250095, "rate": 0.0057}],
+        "default_thresholds": {"DSCR_min": 1.2, "CoC_min": 0.06, "IRR_min": 0.08, "MaxNegCF_allowed": 3000},
+        "default_assumptions": {"purchase_other_costs": 2500}
+      }
+    },
+    {
+      "name": "2026.1",
+      "region": "BRU",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-12-31",
+      "params": {
+        "registration_duty_rates": {"DEFAULT": 0.125, "BR_STANDARD": 0.125},
+        "vat_rates": {"STANDARD": 0.21, "REDUCED": 0.06},
+        "abatement_rules": {"BRU": {"max_basis": 200000}},
+        "notary_fee_schedule": [{"upto": 7500, "rate": 0.045}, {"upto": 17500, "rate": 0.0285}, {"upto": 30000, "rate": 0.0228}, {"upto": 45495, "rate": 0.0171}, {"upto": 64095, "rate": 0.0114}, {"upto": 250095, "rate": 0.0057}],
+        "default_thresholds": {"DSCR_min": 1.2, "CoC_min": 0.06, "IRR_min": 0.08, "MaxNegCF_allowed": 3000},
+        "default_assumptions": {"purchase_other_costs": 2800}
+      }
+    },
+    {
+      "name": "2026.1",
+      "region": "WAL",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-12-31",
+      "params": {
+        "registration_duty_rates": {"DEFAULT": 0.12, "WAL_OWNER": 0.03},
+        "vat_rates": {"STANDARD": 0.21, "REDUCED": 0.06},
+        "abatement_rules": {"BRU": {"max_basis": 200000}},
+        "notary_fee_schedule": [{"upto": 7500, "rate": 0.045}, {"upto": 17500, "rate": 0.0285}, {"upto": 30000, "rate": 0.0228}, {"upto": 45495, "rate": 0.0171}, {"upto": 64095, "rate": 0.0114}, {"upto": 250095, "rate": 0.0057}],
+        "default_thresholds": {"DSCR_min": 1.2, "CoC_min": 0.06, "IRR_min": 0.08, "MaxNegCF_allowed": 3000},
+        "default_assumptions": {"purchase_other_costs": 2300}
+      }
+    }
+  ]
+}
